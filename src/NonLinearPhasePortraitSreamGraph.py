@@ -3,15 +3,6 @@ import matplotlib.pyplot as plt	#has plotting tools
 import numpy as np	#has array and matrix tools
 from numpy import linalg	# has eig()
 
-'''
-Goals for this code:
-
-1) draw phase prtrait of non-linear systems of 2D coupled differential equations
-2) find the Jacobian matrix of these systems
-3) be able to trace a single curve in the system using a numerical method of choice
-4) plot any eigenvectors
-'''
-
 # This code assumes 2D coupled linear equations
 # line thickness is proportional to speed. Color is too
 

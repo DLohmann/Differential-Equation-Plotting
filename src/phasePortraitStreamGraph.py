@@ -8,14 +8,6 @@ from numpy import linalg	# has eig()
 
 #THIS CAN PLOT IN 3D!!!: http://docs.enthought.com/mayavi/mayavi/auto/example_lorenz.html#example-lorenz
 
-# Resources I used to program this:
-#Python:	https://docs.python.org/3/faq/programming.html#what-are-the-rules-for-local-and-global-variables-in-python
-#Matplotlib:	https://matplotlib.org/users/pyplot_tutorial.html
-#https://matplotlib.org/examples/images_contours_and_fields/streamplot_demo_features.html
-#https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.streamplot.html
-#numpy:	https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.mgrid.html
-#stackoverflow:	https://stackoverflow.com/questions/15908371/matplotlib-colorbars-and-its-text-labels
-
 #plot will plot from -xWindow to +xWindow horizontally, and from -yWindow to +yWindow vertically
 # {x | -xWindow < x < +xWindow}
 # {y | -yWindow < y < +yWindow}
