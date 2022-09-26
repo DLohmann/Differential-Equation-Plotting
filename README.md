@@ -9,6 +9,8 @@ Goals for this code:
 4) plot any eigenvectors
 
 TODO: Write documentation
+TODO: Add requirements.txt
+TODO: Publish GitHub package
 
 ## How to use this code
 
@@ -36,11 +38,16 @@ http://www.cambridge.org/us/academic/subjects/mathematics/differential-and-integ
 Here is a link to the textbook:
 http://www.cambridge.org/0521533910
 
+More differential equation software:
+http://math.rice.edu/~dfield/index.html
+
 # Resources used:
 * Python:	https://docs.python.org/3/faq/programming.html#what-are-the-rules-for-local-and-global-variables-in-python
 * Matplotlib:
 	* https://matplotlib.org/users/pyplot_tutorial.html
 	* https://matplotlib.org/examples/images_contours_and_fields/streamplot_demo_features.html
 	* https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.streamplot.html
-* numpy:	https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.mgrid.html
+* numpy:
+	* https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.mgrid.html
+	* http://docs.enthought.com/mayavi/mayavi/auto/example_lorenz.html#example-lorenz
 * stackoverflow:	https://stackoverflow.com/questions/15908371/matplotlib-colorbars-and-its-text-labels

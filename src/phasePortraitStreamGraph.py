@@ -1,12 +1,7 @@
 #!/usr/bin/python
-import matplotlib.pyplot as plt	#has plotting tools
-import numpy as np	#has array and matrix tools
-from numpy import linalg	# has eig()
-
-# This code assumes 2D coupled linear equations
-# line thickness is proportional to speed. Color is too
-
-#THIS CAN PLOT IN 3D!!!: http://docs.enthought.com/mayavi/mayavi/auto/example_lorenz.html#example-lorenz
+import matplotlib.pyplot as plt
+import numpy as np
+from numpy import linalg
 
 #plot will plot from -xWindow to +xWindow horizontally, and from -yWindow to +yWindow vertically
 # {x | -xWindow < x < +xWindow}
@@ -15,15 +10,11 @@ xWindow = 3
 yWindow = 3 #Bug: Currently, the plot gets messed up if plotting the eigenvectors when xWindow > yWindow, and the eigenvector goes beyond window of streamplot
 plotEigenvectors = True
 
-#input:
-#in python 3.5, "raw_input()" was renamed to "input()"
-str = input ("Please enter a 2*2 matrix (e.g.: 1 0 1 0): ")
-
 #imaginary:
 #str = "0 -1 1 -1"
 
 #real:
-#str = "1 2 1 0"
+str = "1 2 1 0"
 
 str_matrix = str.split()
 nn_matrix = [int(str_matrix[i]) for i in range (0, len(str_matrix))]
@@ -81,41 +72,6 @@ print (eigvects)
 print ("rotated 90 degrees so each row is a vector:\n")
 print (np.rot90(eigvects))
 
-#*******************************CALCULATE THE VELOCITY: **************************
-'''
-# uses simple Euler approximation
-# (x0, y0) is starting point, "h" is step size in time (t), and "N" is number of points to generate (So ending time predicted is h*N, or (time per step) * (number of steps))
-def numericalMethod (x0, y0, h, N):
-	t = [i for i in range (0, int(N*h))]
-	#pre-allocate x and y for speed (so program doesn't need to dynamically change their size later. This helps program run faster, since it knows how much memory to allocate, without re-allocating more memory later)
-	x = np.empty(len(t))
-	y = np.empty(len(t))
-	
-	Vx = np.empty(len(t))
-	Vy = np.empty(len(t))
-	
-	x[0] = x0
-	y[0] = y0
-	#print ("A[0][0] == ", A[0][0], "A[0][1] == ", A[0][1], "A[1][0] == ", A[1][0], "A[1][1] == ", A[1][1])
-	for i in range (1, len(t)):
-		#x = xold + slope*h. x[n] = x[n-1] + (x'[n-1] * h)
-		#x[i] = x[i-1] + ((A[0][0]*x[i - 1]) + (A[0][1]*y[i - 1]))*h
-		#y[i] = y[i-1] + ((A[1][0]*x[i - 1]) + (A[1][1]*y[i - 1]))*h
-		
-		
-		Vx[i-1] = (A[0][0]*x[i - 1]) + (A[0][1]*y[i - 1])
-		Vy[i-1] = (A[1][0]*x[i - 1]) + (A[1][1]*y[i - 1])
-		x[i] = x[i-1] + (Vx[i-1])*h
-		y[i] = y[i-1] + (Vy[i-1])*h
-		
-		
-		#print ("x[", i, "]=", x[i], ", y[", i, "]=", y[i])
-	#return [t, x, y]
-	return [t, x, y, Vx, Vy]
-	
-t, x, y, Vx, Vy = numericalMethod(3.5, 4.5, 1, 10)
-speed = np.sqrt(Vx*Vx + Vy*Vy)
-'''
 
 #********************Make the Stream Plot:***************
 
@@ -148,7 +104,7 @@ for i in range (0, len(eigvalues)):
 		isComplex = True
 		break;
 if (isComplex):
-	print ("Complex Eigenvalues, so can't draw eigenvectors\n")
+	print("Complex Eigenvalues, so can't draw eigenvectors\n")
 elif(plotEigenvectors == False):
 	print("EigenVector plotting is turned off\n")
 else:
@@ -205,13 +161,6 @@ else:
 			plt.annotate(s='', xy=(                 0,                  0), xytext=(-1*outerPoint[0],   -1*outerPoint[1]), arrowprops=dict(arrowstyle='->'))
 			plt.annotate(s='', xy=(-1*outerPoint[0]/3, -1*outerPoint[1]/3), xytext=(-1*outerPoint[0],   -1*outerPoint[1]), arrowprops=dict(arrowstyle='->'))
 			plt.annotate(s='', xy=(-2*outerPoint[0]/3, -2*outerPoint[1]/3), xytext=(-1*outerPoint[0],   -1*outerPoint[1]), arrowprops=dict(arrowstyle='->'))
-			
-
-
-
-
-
-
 
 plt.title ("Phase portrait:")
 plt.ylabel("Y(t) value")
