@@ -3,23 +3,31 @@
 # TODO
 Goals for this code:
 
-1) draw phase prtrait of non-linear systems of 2D coupled differential equations
-2) find the Jacobian matrix of these systems
-3) be able to trace a single curve in the system using a numerical method of choice
-4) plot any eigenvectors
+1) Done: draw phase prtrait of non-linear systems of 2D coupled differential equations
+2) Done: find the Jacobian matrix of these systems
+3) Done: be able to trace a single curve in the system using a numerical method of choice
+4) Done: plot any eigenvectors
 
 TODO: Write documentation
 TODO: Add requirements.txt
 TODO: Publish GitHub package
+TODO: Organize, productionalize all plotting code into a single, well documented function, and remove uneccessary code.
+TODO: Use [Google Python Fire](https://github.com/google/python-fire) to make the Python function into an organized, production ready CLI function.
+TODO: Try to follow [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html).
 
 ## How to use this code
 
 ```python
-def plot(blaah=blaah)
+def plot(plot_eigenvectors = True)
 
 plot(blaah=foo, ...)
 
 ```
+#### Documentation
+* matrix (required): A 2 by 2 matrix for the phase portrait stream plot.
+* plot_eigenvectors (optional, default true): If any eigenvalue is complex, this option does nothing. If all eigenvalues are real (none are complex) then plots arrows indicating the direction of the eigenvectors.
+* 
+
 
 Result:
 <div align="center">
